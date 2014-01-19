@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/bootstrap/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    {% for message in get_flashed_messages() %}
+    <div class="alert">{{ message }}</div>
+    {% endfor %}
+    <div class="container">
+    
+        <h1>Start Page</h1>
+        <hr/>
+
+     <form role="form" method="GET">
+      <div class="form-group">
+        <label for="some_text">Some Text</label>
+        <input class="form-control" id="some_text" name="some_text" placeholder="Some text please">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="take_part"> Take Part?
+        </label>
+      </div>
+
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>
+        Option 1
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">
+        Option 2
+      </label>
+    </div>
+
+    <div class="select">
+
+    <label>Select Single</label>    
+    <select class="form-control" name="select_single">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+    <label>Select Multiple</label>  
+    <select multiple class="form-control" name="select_multiple">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+
+    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+
+
+</div>
+    <br/>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    </div>
+  </body>
+  <script src="{{ url_for('static', filename='vendors/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendors/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</html>
+
