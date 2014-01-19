@@ -4,4 +4,4 @@ lxml
 html5lib
 mechanize
 wtforms
-wtforms-html5
+
