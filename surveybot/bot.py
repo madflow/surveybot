@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import mechanize
 
-class SurveyBot():
+class SurveyBot(object):
 
     url = False
     config = False
