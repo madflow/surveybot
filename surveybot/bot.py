@@ -7,7 +7,7 @@ class SurveyBot(object):
     url = None
     config = None
     
-    def __init__(self, url, config):
+    def __init__(self, url, config=None):
         self.url = url
         self.config = config
 
