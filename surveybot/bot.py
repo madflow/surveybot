@@ -1,24 +1,23 @@
 from bs4 import BeautifulSoup
 import requests
-import mechanize
+from splinter import Browser
 
 class SurveyBot(object):
 
     url = False
     config = False
     
-    def __init__(self, url):
+    def __init__(self, url, config):
         self.url = url
+        self.config = config
 
     def run(self):
-        br = mechanize.Browser()
-        br.set_handle_refresh(True)
-        br.set_debug_redirects(True)
-        br.set_debug_responses(True)
-        br.set_debug_http(True)
-        br.open(self.url)
+        browser = Browser()
+        browser.visit(self.url)
 
-        for i in range(1, 10):
-            br.select_form(nr=0)
-            response = br.submit()
-            print response.read()
+        for field in browser.find_by_tag('input'):
+            field.value='Hello'
+
+        
+
+  

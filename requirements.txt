@@ -2,6 +2,6 @@ requests
 beautifulsoup4
 lxml
 html5lib
-mechanize
+splinter
 wtforms
 wtforms-html5

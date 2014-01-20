@@ -1,12 +1,12 @@
 import argparse
 
 def process_run(args):
-    print args.participants
-    '''
     from surveybot.bot import SurveyBot
-    bot = SurveyBot(args.url)
+    config = {
+
+    }
+    bot = SurveyBot(args.url, config)
     bot.run()
-    '''
 
 def main():
     parser = argparse.ArgumentParser(description='Smack a survey')
