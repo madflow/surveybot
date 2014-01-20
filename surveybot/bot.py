@@ -4,8 +4,8 @@ from splinter import Browser
 
 class SurveyBot(object):
 
-    url = False
-    config = False
+    url = None
+    config = None
     
     def __init__(self, url, config):
         self.url = url
