@@ -4,10 +4,10 @@ from splinter import Browser
 
 class SurveyBot(object):
 
-    url = False
-    config = False
+    url = None
+    config = None
     
-    def __init__(self, url, config):
+    def __init__(self, url, config=None):
         self.url = url
         self.config = config
 
