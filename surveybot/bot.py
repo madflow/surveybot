@@ -15,8 +15,20 @@ class SurveyBot(object):
         browser = Browser()
         browser.visit(self.url)
 
+        fields = []
+        textareas = []
         for field in browser.find_by_tag('input'):
-            field.value='Hello'
+            fields.append(field)
+
+        for textarea in browser.find_by_tag('textarea'):
+            textareas.append(textarea)
+
+        while(browser.find_by_tag('button').first):
+            browser.find_by_tag('button').first.click()
+
+
+
+
 
         
 
