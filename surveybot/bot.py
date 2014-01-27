@@ -5,11 +5,11 @@ from splinter import Browser
 class SurveyBot(object):
 
     url = None
-    config = None
+    varmap = None
     
-    def __init__(self, url, config=None):
+    def __init__(self, url=None, varmap=None):
         self.url = url
-        self.config = config
+        self.varmap= varmap
 
     def run(self):
         browser = Browser()
@@ -23,11 +23,14 @@ class SurveyBot(object):
         for textarea in browser.find_by_tag('textarea'):
             textareas.append(textarea)
 
+        
+
         while(browser.find_by_tag('button').first):
             browser.find_by_tag('button').first.click()
 
 
-
+    def process_textarea(textarea):
+        pass
 
 
         
