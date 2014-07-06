@@ -12,3 +12,9 @@ Install system-wide:
     sudo python setup.py install
 
 [![Build Status](https://travis-ci.org/madflow/surveybot.png?branch=master)](https://travis-ci.org/madflow/surveybot)
+
+
+# Build dependencies for Debian
+
+sudo apt-get build-dep python-lxml
+sudo apt-get install libhdf5-dev python-dev
