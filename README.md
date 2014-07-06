@@ -16,5 +16,5 @@ Install system-wide:
 
 # Build dependencies for Debian
 
-sudo apt-get build-dep python-lxml
-sudo apt-get install libhdf5-dev python-dev
+    sudo apt-get build-dep python-lxml
+    sudo apt-get install libhdf5-dev python-dev
