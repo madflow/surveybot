@@ -41,6 +41,13 @@ class SurveyBot(object):
         except ElementDoesNotExist:
             pass
 
+        try:
+            window = browser.windows[0]
+            window.close()
+        except AttributeError:
+            pass
+
+
     def process_elements(self, browser):
         for field in browser.find_by_xpath('//input[@type="text"]'):
             self.process_text(field)
