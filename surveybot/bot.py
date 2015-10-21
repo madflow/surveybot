@@ -9,6 +9,7 @@ import random
 from splinter import Browser
 from splinter.exceptions import ElementDoesNotExist
 
+from time import sleep
 
 class SurveyBot(object):
 
@@ -22,9 +23,9 @@ class SurveyBot(object):
         'Lorem ipsulum',
         '1999',
     ]
-    next_button_xpath = '//input[@type="submit"]'
+    next_button_xpath = '//input[@type="submit"] | //button[@type="submit"]'
 
-    def __init__(self, url=None, varmap=None, browser = 'firefox'):
+    def __init__(self, url = None, varmap = None, browser = 'firefox'):
         self.url = url
         self.varmap = varmap
         self.browser = browser
@@ -44,7 +45,7 @@ class SurveyBot(object):
         try:
             window = browser.windows[0]
             window.close()
-        except AttributeError:
+        except:
             pass
 
 
@@ -103,6 +104,7 @@ class SurveyBot(object):
     def process_radio(self, el):
         if self.varmap is None:
             self._process_random_radio(el)
+            sleep(1)
         else:
             pass
 
